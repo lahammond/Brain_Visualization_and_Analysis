@@ -205,7 +205,7 @@ if __name__ == "__main__":
   cell_detection_parameter['background_correction']['form'] = 'Disk';
   #cell_detection_parameter['background_correction']['save'] = ws.filename('cells', postfix='bgremove');
   cell_detection_parameter['intensity_detection']['measure'] = ['source'];
-  cell_detection_parameter['shape_detection']['threshold'] = 1200;
+  #cell_detection_parameter['shape_detection']['threshold'] = 1200;
   
   io.delete_file(ws.filename('cells', postfix='maxima')) # deletes existing cells maxima file
   cell_detection_parameter['maxima_detection']['shape'] = 3 #5 #size of structural element - should be near typical size of cell
