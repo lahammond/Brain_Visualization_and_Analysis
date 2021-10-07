@@ -142,7 +142,7 @@ if __name__ == "__main__":
   
   #p3d.plot([ws.filename('resampled'), ws.filename('resampled', postfix='autofluorescence')])
   
-  #%% Aignment - resampled to autofluorescence (>2min - update elastix?)
+  #%% Aignment - resampled to autofluorescence (>2min - update elastix to v5 for improved speed?)
   
   # align the two channels
   align_channels_parameter = {            
@@ -160,7 +160,7 @@ if __name__ == "__main__":
   
   elx.align(**align_channels_parameter);
   
-  #%% Alignment - autoflourescence to reference - 7-9min (improve with new version of elastix?)
+  #%% Alignment - autoflourescence to reference - 7-9min (update elastix to v5 for improved speed)
   
   # align autofluorescence to reference
   align_reference_parameter = {            
@@ -258,7 +258,7 @@ if __name__ == "__main__":
   #%% Filter cells and plot filtered cell statistics
   
   thresholds = { # can filter on any column in the cells table
-      'source' : None, #this could be measured intensity ?
+      'source' : None, #Measured intensity
       'size'   : (20,900) #filter cells based on size range
       }
   
@@ -322,7 +322,6 @@ if __name__ == "__main__":
  #%% Cell annotation
   # *** by default this script only provides graph order - which may confuse some users after region ID
   # updated to include ID and acronyms
-  # in tutorial show people the json file to understand regions
   
   label = ano.label_points(coordinates_transformed, key='order');
   names = ano.convert_label(label, key='order', value='name');
