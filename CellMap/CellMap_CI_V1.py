@@ -203,14 +203,14 @@ if __name__ == "__main__":
   #cell_detection_parameter['background'] = None;
   cell_detection_parameter['background_correction']['shape'] = (7,7);
   cell_detection_parameter['background_correction']['form'] = 'Disk';
-  cell_detection_parameter['background_correction']['save'] = ws.filename('cells', postfix='bgremove');
+  #cell_detection_parameter['background_correction']['save'] = ws.filename('cells', postfix='bgremove');
   cell_detection_parameter['intensity_detection']['measure'] = ['source'];
   cell_detection_parameter['shape_detection']['threshold'] = 1200;
   
   io.delete_file(ws.filename('cells', postfix='maxima')) # deletes existing cells maxima file
   cell_detection_parameter['maxima_detection']['shape'] = 3 #5 #size of structural element - should be near typical size of cell
   cell_detection_parameter['maxima_detection']['threshold'] = 700 #only maxima above this intensity are detected
-  cell_detection_parameter['maxima_detection']['save'] = ws.filename('cells', postfix='maxima')
+  #cell_detection_parameter['maxima_detection']['save'] = ws.filename('cells', postfix='maxima')
  
   #Parameters for block processing   for 128GB RAM  6, 100,50,16, chunkoptTrue, chunkoptsizeall, processparaellel
   processing_parameter = cells.default_cell_detection_processing_parameter.copy();
